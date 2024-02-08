@@ -30,10 +30,12 @@
                     <a id="logo" href="<?php $this->options->siteUrl(); ?>">
                         <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>"/>
                     </a>
+                    <a id="logo">
                 <?php else: ?>
-                    <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
-                    <p class="description"><?php $this->options->description() ?></p>
+                    <a id="logo" href="<?php $this->options->siteUrl(); ?>">
                 <?php endif; ?>
+                <b><?php $this->options->title() ?></b></a>
+                <p class="description"><?php $this->options->description() ?></p>
             </div>
             <div class="site-search col-3 kit-hidden-tb">
                 <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">

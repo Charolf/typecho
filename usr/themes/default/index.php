@@ -12,6 +12,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
 
+<?php if (class_exists("Notification_Plugin")): ?>
+    <?php Notification_Plugin::render();?>
+<?php endif;?>
+
 <div class="col-mb-12 col-8" id="main" role="main">
     <?php if (!($this->is('index')) and !($this->is('post'))): ?>
     <h3 class="archive-title"><?php $this->archiveTitle([

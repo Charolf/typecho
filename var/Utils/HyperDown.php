@@ -536,7 +536,7 @@ class HyperDown
                     $this->escapeBracket($matches[1]), '', false
                 );
                 $result = isset($this->_definitions[$matches[2]]) ?
-                    "<a href=\"{$this->_definitions[$matches[2]]}\">{$escaped}</a>"
+                    "<a href=\"{$this->_definitions[$matches[2]]}\" target=\"_blank\" rel=\"noopener noreferrer\">{$escaped}</a>"
                     : $escaped;
 
                 return $this->makeHolder($result);
@@ -559,7 +559,7 @@ class HyperDown
                 function ($matches) {
                     $url = $this->cleanUrl($matches[2]);
                     $link = $this->call('parseLink', $matches[2]);
-                    return "{$matches[1]}<a href=\"{$url}\">{$link}</a>{$matches[5]}";
+                    return "{$matches[1]}<a href=\"{$url}\" target=\"_blank\" rel=\"noopener noreferrer\">{$link}</a>{$matches[5]}";
                 },
                 $text
             );
