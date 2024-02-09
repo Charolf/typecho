@@ -236,9 +236,11 @@ namespace Typecho {
                 } elseif ($exception instanceof \Typecho\Db\Adapter\SQLException) {
                     $message = 'Database Query Error';
                 }
-            } else {
-                $message = 'Server Error';
             }
+            // 02/08/2024 移除下列代码
+            // else {
+            //     $message = 'Server Error';
+            // }
 
             /** 设置http code */
             if (is_numeric($code) && $code > 200) {

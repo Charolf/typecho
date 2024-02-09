@@ -496,6 +496,8 @@ class Archive extends Contents
             'archive'            => 'archiveEmptyHandle',
             'archive_page'       => 'archiveEmptyHandle',
             404                  => 'error404Handle',
+            /* Added 403 handle on 02/08/2024 */
+            403                  => 'error403Handle',
             'single'             => 'singleHandle',
             'page'               => 'singleHandle',
             'post'               => 'singleHandle',
@@ -1526,6 +1528,39 @@ EOF;
 
         /** 插件接口 */
         self::pluginHandle()->call('error404Handle', $this, $select);
+    }
+    
+    /**
+     * 403页面处理
+     * 02/08/2024 添加
+     *
+     * @param Query $select 查询对象
+     * @param boolean $hasPushed 是否已经压入队列
+     */
+    private function error403Handle(Query $select, bool &$hasPushed)
+    {
+        /** 设置header */
+        $this->response->setStatus(403);
+
+        /** 设置标题 */
+        $this->archiveTitle = _t('无权限');
+
+        /** 设置归档类型 */
+        $this->archiveType = 'archive';
+
+        /** 设置归档缩略名 */
+        $this->archiveSlug = 403;
+
+        /** 设置归档模板 */
+        $this->themeFile = '403.php';
+
+        /** 设置单一归档类型 */
+        $this->archiveSingle = false;
+
+        $hasPushed = true;
+
+        /** 插件接口 */
+        self::pluginHandle()->call('error403Handle', $this, $select);
     }
 
     /**
