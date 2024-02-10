@@ -236,11 +236,12 @@ namespace Typecho {
                 } elseif ($exception instanceof \Typecho\Db\Adapter\SQLException) {
                     $message = 'Database Query Error';
                 }
+            // 02/09/2024 添加下两行
+            } elseif ($exception instanceof \Typecho\Widget\Exception) {
+                $message = $exception->getMessage();
+            } else {
+                $message = 'Server Error';
             }
-            // 02/08/2024 移除下列代码
-            // else {
-            //     $message = 'Server Error';
-            // }
 
             /** 设置http code */
             if (is_numeric($code) && $code > 200) {

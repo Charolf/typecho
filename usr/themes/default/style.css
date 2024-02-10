@@ -9,6 +9,21 @@
 /* ------------------
  * Global style
  * --------------- */
+ 
+
+/*@font-face {*/
+/*    font-family: "Source Han Serif";*/
+/*    src: local('Source Han Serif SC'), local('Source Han Serif CN'),*/
+/*         url("font/SourceHanSerifCN-VF.otf.woff2") format('woff2');*/
+/*    font-display: swap;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Source Han Sans";*/
+/*    src: local('Source Han Sans SC'), local('Source Han Sans CN'),*/
+/*         url("font/SourceHanSansCN-VF.otf.woff2") format('woff2');*/
+/*    font-display: swap;*/
+/*}*/
 
 body {
   background-color: #FFF;
@@ -64,7 +79,7 @@ table th {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Trebuchet MS, Lucida Sans, Helvetica, Arial, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft Jhenghei", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+  font-family: Trebuchet MS, Lucida Sans, Helvetica, Arial, "Source Han Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft Jhenghei", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
 }
 
 input[type="text"],
